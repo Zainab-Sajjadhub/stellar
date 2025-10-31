@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Page</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="java1.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    .accordion-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-container h2 {
+      text-align: center;
+      color: #1d2d44;
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      background: #e6f0fa;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      border: 1px solid #cfe3f3;
+    }
+
+    .accordion-item.active {
+      background-color: #1d2d44;
+      color: #ffffff;
+    }
+
+    .accordion-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .accordion-item .answer {
+      display: none;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .accordion-item.active .answer {
+      display: block;
+      color: #e0f7ff;
+    }
+
+    a.drop {
+      font-weight: normal !important;
+    }
+
+    .footer{
+      font-family: 'Cormorant Garamond', serif;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Promo Banner -->
+  <div class="rectangle-22">
+    <div class="slideshow-container" id="slides">
+      <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+        <span id="pipo">Discounts & Coupons</span>
+      </div>
+      <div class="slide"><span>Get 40% off Your First Order</span></div>
+      <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+    </div>
+    <div class="slideshow-nav">
+      <button id="prev-slide">&lt;</button>
+      <button id="next-slide">&gt;</button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="discount-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">X</span>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  <!-- Header and Navigation -->
+  <div class="header">
+    <ul class="head">
+      <li class="fix"><a href="index.php">Stellar</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="dropdown">
+        <div class="dropdown">
+          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
+          <div class="dropdown-menu">
+            <a href="category.php?category=Cleansers">Cleansers</a>
+            <a href="category.php?category=Moisturizers">Moisturizers</a>
+            <a href="category.php?category=Toners">Toners</a>
+            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+            <a href="category.php?category=Sunscreens">Sunscreens</a>
+          </div>
+        </div>          
+    </li>
+      <li><a href="form.html">&nbsp;&nbsp;Skincare Quiz</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+      <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+
+    <!-- Search -->
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <h1 style="text-align:center; color:#1d2d44;">Hey StellarDoll!</h1>
+  <p style="text-align:center; max-width: 700px; margin: auto;">
+    Welcome to our FAQ section! We answer common skincare questions, ingredient info, and usage tips.
+    We don’t sell directly but we guide, glow, and glam.
+  </p>
+
+  <div class="accordion-container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <h3>What is Stellar?</h3>
+        <div class="answer">Stellar is your virtual skincare concierge offering curated, dermatologist-approved product recommendations.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Are your recommendations safe for all skin types?</h3>
+        <div class="answer">Yes! We recommend products suitable for sensitive, oily, dry, combination, and acne-prone skin types.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Do you sell products?</h3>
+        <div class="answer">Nope! We showcase stellar skincare options and where to get them, but we don’t handle transactions.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Are your recommendations cruelty-free or vegan?</h3>
+        <div class="answer">Many of them are! Look out for cruelty-free or vegan tags on our suggestions.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Can I return a product you recommended?</h3>
+        <div class="answer">Returns are processed through the retailer you purchase from. We don't sell directly.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>How do I know which product is right for me?</h3>
+        <div class="answer">We provide detailed descriptions and a skin quiz to help you find the perfect match.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Where can I get in touch for help?</h3>
+        <div class="answer">Email us at support@stellarskin.com or chat with GlamBot directly on our site!</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+<footer class="footer">
+    <span>Feedback</span>&nbsp;&nbsp;
+    <span>Contact US</span>&nbsp;&nbsp;
+    <span>Customer Support</span>
+</footer>
+
+  <!-- Accordion Script -->
+  <script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+      item.addEventListener('click', () => {
+        accordionItems.forEach(i => i.classList.remove('active'));
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
